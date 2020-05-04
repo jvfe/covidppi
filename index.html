@@ -7,11 +7,13 @@
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <link rel="shortcut icon" href="./favicon.ico" />
 </head>
   <body>
     <div style="text-align: center; background-color:azure;">
-      <h1 class="font-sans text-4xl text-gray-800 text-center">Visualizing SARS-CoV-2 and Homo sapiens PPI network</h1> 
-      <p class="font-mono text-lg text-gray-800 text-center">The data was acquired from <a target="_blank" href="https://thebiogrid.org/news/231">BioGRID</a> and the visualization was adapted from <a  target="_blank" href="https://observablehq.com/@d3/disjoint-force-directed-graph">d3's disjointed graph example</a>. </p>
+      <h1 class="font-sans text-4xl text-gray-800 text-center">Visualizing the SARS-CoV-2/Homo sapiens PPI network</h1> 
+      <p class="font-mono text-lg text-gray-800 text-center">The data was acquired from <a class = "underline" target="_blank" href="https://thebiogrid.org/news/231">BioGRID</a> and the visualization was adapted from <a class="underline" target="_blank" href="https://observablehq.com/@d3/disjoint-force-directed-graph">d3's disjointed graph example</a>. </p>
+      <p class="font-mono text-lg text-gray-800 text-center">Node size on hover is equivalent to the node's degree.</p>
       <a target='_blank' href="https://www.github.com/jvfe"><i class="fa fa-github mr-md-5 mr-3 fa-1x"></i></a> <a target='_blank' href="https://www.gitlab.com/jvfe"><i class="fa fa-gitlab mr-md-5 mr-3 fa-1x"></i></a>
     </div>
     <div>

@@ -1,14 +1,17 @@
+// Dimensions
 const svg = d3.select("svg"),
   width = +svg.attr("width"),
   height = +svg.attr("height");
 
 svg.attr("viewBox", [-width / 2, -height / 2, width, height]);
 
+// Set color by species id
 color = (function () {
   const scale = d3.scaleOrdinal(d3.schemeSet1);
   return d => scale(d.species);
 })();
 
+// Dragging mechanism
 const drag = simulation => {
 
   function dragstarted(d) {
@@ -34,7 +37,8 @@ const drag = simulation => {
     .on("end", dragended);
 }
 
-d3.json("biogrid.json").then(function (data) {
+// Data loading and chart creation
+d3.json("./data/biogrid.json").then(function (data) {
   const chart = (function () {
     const links = data.links.map(d => Object.create(d));
     const nodes = data.nodes.map(d => Object.create(d));
@@ -55,7 +59,7 @@ d3.json("biogrid.json").then(function (data) {
 
 
     let radius = 5
-
+    // Hover functions
     function mouseOver(d, i) {
       d3.select(this)
         .transition()
@@ -91,7 +95,7 @@ d3.json("biogrid.json").then(function (data) {
       .on("mouseout", mouseOut)
       .call(drag(simulation));
 
-
+    // Tooltip for nodes
     node.append("title")
       .text(d => `Protein: ${d.id.split('_')[1]}\nSpecies: ${d.species}`)
       .attr("fill", "yellow");
